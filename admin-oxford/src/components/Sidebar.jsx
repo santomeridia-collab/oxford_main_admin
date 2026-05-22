@@ -77,7 +77,10 @@ import {
   User,
   ChevronDown,
   MessageSquare,
-  Newspaper
+  Newspaper,
+  Video,
+  UserCheck,
+  Award
 } from 'lucide-react';
 
 const menuItems = [
@@ -88,6 +91,9 @@ const menuItems = [
   { id: 'events', label: 'Events', icon: CalendarDays },
     { id: 'contacts', label: 'Reviews', icon: MessageSquare }, // Add this
     { id: 'news', label: 'News & Blog', icon: Newspaper },
+{ id: 'demos', label: 'Demo Requests', icon: Video },
+{ id: 'enrolls', label: 'Enrollments', icon: UserCheck },
+{ id: 'instructors', label: 'Instructors', icon: Award },
 
 
 ];

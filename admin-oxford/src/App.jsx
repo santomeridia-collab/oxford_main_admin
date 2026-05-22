@@ -10,6 +10,9 @@ import EventsManager from "./components/EventsManager";
 import ContactsManager from "./components/ContactsManager";
 import { authService } from "./services/auth.service";
 import NewsManager from "./components/NewsManager";
+import DemoManager from './components/DemoManager';
+import EnrollManager from './components/EnrollManager';
+import InstructorManager from './components/InstructorManager';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -60,6 +63,13 @@ const App = () => {
         return <ContactsManager />;
       case "news":
         return <NewsManager />;
+        case 'demos':
+  return <DemoManager />;
+  case 'enrolls':
+  return <EnrollManager />;
+  case 'instructors':
+  return <InstructorManager />;
+
       default:
         return <Dashboard />;
     }
