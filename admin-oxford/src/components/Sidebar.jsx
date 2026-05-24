@@ -185,7 +185,8 @@ import {
   LogOut,
   ChevronDown,
   ChevronLeft,
-  ChevronRight
+  ChevronRight, ShieldCheck,
+  ExternalLink
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -205,6 +206,9 @@ const menuItems = [
 const Sidebar = ({ activeSection, setActiveSection, user, onLogout }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const handleVerificationClick = () => {
+    window.open('https://verify.oxfordstudycenter.com/', '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <div className={`${isCollapsed ? 'w-20' : 'w-64'} bg-white shadow-lg flex flex-col h-full transition-all duration-300`}>
@@ -254,6 +258,22 @@ const Sidebar = ({ activeSection, setActiveSection, user, onLogout }) => {
             </button>
           );
         })}
+         <div className="my-3 border-t border-gray-200"></div>
+
+        {/* Verification Link - External */}
+        <button
+          onClick={handleVerificationClick}
+          className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 group text-gray-600 hover:bg-green-50 hover:text-green-700"
+          title={isCollapsed ? 'Certificate Verification' : ''}
+        >
+          <ShieldCheck className="w-5 h-5 flex-shrink-0 text-gray-400 group-hover:text-green-600" />
+          {!isCollapsed && (
+            <>
+              <span className="font-medium flex-1 text-left">Verification</span>
+              <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-green-600" />
+            </>
+          )}
+        </button>
       </nav>
 
       {/* User Section */}
