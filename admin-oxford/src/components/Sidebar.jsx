@@ -207,7 +207,7 @@ const Sidebar = ({ activeSection, setActiveSection, user, onLogout }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
   const handleVerificationClick = () => {
-    window.open('https://verify.oxfordstudycenter.com/', '_blank', 'noopener,noreferrer');
+    window.open('https://verify.oxfordstudycenter.com/admin/login', '_blank', 'noopener,noreferrer');
   };
 
   return (
